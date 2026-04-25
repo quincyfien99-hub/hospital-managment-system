@@ -8,8 +8,19 @@
   },
   "detail": {
     "contributors": [],
-    "diagrams": [],
-    "diagramTop": 0,
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "The currency conversion feature accepts a user‑supplied currency code via an HTTP GET request. The backend Python service concatenates this input directly into an SQL query without sanitisation and returns the query results as JSON.",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.0",
+        "cells": [],
+        "description": "STRIDE Threat Analysis – SwiftPay Currency Conversion  1. Spoofing    - An attacker could impersonate another user by manipulating session tokens if the API gateway does not validate authentication properly.    - Severity: Medium  2. Tampering    - The user input (currency code) is directly concatenated into an SQL query. An attacker can modify the input to alter the query logic (e.g., ' OR '1'='1).    - The HTTP request could be intercepted and modified if TLS is not enforced (data‑in‑transit tampering).    - Severity: High  3. Repudiation    - No audit logs are mentioned for search queries. An attacker could deny performing malicious searches.    - Severity: Low  4. Information Disclosure    - SQL injection allows an attacker to dump entire tables (e.g., exchange_rates, users). This is the primary disclosure risk.    - Error messages might reveal database structure if detailed exceptions are returned to the user.    - Severity: Critical  5. Denial of Service    - An attacker could send stacked queries (e.g., '; SLEEP(5); --) to exhaust database connections.    - Malformed inputs might crash the unhardened Python backend.    - Severity: Medium  6. Elevation of Privilege    - If the database connection uses a privileged account (e.g., DBA), SQL injection could lead to administrative access to the database server.    - Stored XSS (via nickname) could execute in an admin's browser, leading to session hijacking and privilege escalation.    - Severity: High"
+      }
+    ],
+    "diagramTop": 2,
     "reviewer": "Peer Reviewer",
     "threatTop": 0
   }
