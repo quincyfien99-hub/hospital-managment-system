@@ -1,0 +1,16 @@
+{
+  "version": "2.6.0",
+  "summary": {
+    "title": "SwiftPay Currency Converter",
+    "owner": "Blue Team - SwiftPay",
+    "description": "The currency conversion feature allows users to search live exchange rates via a search bar. the backend (Python/flask) queries a MySQL database using user-supplied currency codes. No input sanitization is applied. results are returned as JSON to the frontend",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [],
+    "diagramTop": 0,
+    "reviewer": "Peer Reviewer",
+    "threatTop": 0
+  }
+}
